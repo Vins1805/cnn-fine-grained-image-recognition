@@ -15,3 +15,14 @@ Learning Multi-Attention Convolutional Neural Network for Fine-GrainedImage Reco
 
 https://github.com/ZF4444/MMAL-Net
 
+## References
+
+### CNN explained
+
+* https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53
+
+* https://medium.com/@RaghavPrabhu/understanding-of-convolutional-neural-network-cnn-deep-learning-99760835f148
+
+* https://jaai.de/convolutional-neural-networks-cnn-aufbau-funktion-und-anwendungsgebiete-1691/
+
+
