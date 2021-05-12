@@ -15,6 +15,14 @@ Learning Multi-Attention Convolutional Neural Network for Fine-GrainedImage Reco
 
 https://github.com/ZF4444/MMAL-Net
 
+https://github.com/aftercloud/MA-CNN
+
+
+## Miro Board
+
+https://miro.com/welcomeonboard/b4vsJi2h0jrmzd4glABzxefCaI031QXgds4nGeS58MNcZstlTc8lhOKULjUKhXrr
+
+
 ## References
 
 ### CNN explained
