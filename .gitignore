@@ -1,4 +1,5 @@
 datasets/CUB_200_2011/images/*
 .ipynb_checkpoints
 .idea
-*.hdf5
+.hdf5
+__pycache__/
