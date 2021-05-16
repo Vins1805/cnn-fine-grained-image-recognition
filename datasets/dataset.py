@@ -7,6 +7,10 @@ from sklearn.model_selection import train_test_split
 
 class CUBDataset(Dataset):
     def __init__(self, is_test: bool = False, test_size: int = 1/6, random_state: int = 0):
+        """
+            Every instance of this class has the same train and test data due to fixed random state
+        
+        """
         super(CUBDataset, self).__init__()
         self.is_test = is_test
         self.data = h5py.File("samples/cub_data.hdf5", 'r')
@@ -22,6 +26,7 @@ class CUBDataset(Dataset):
         img = self.data[key]["x"][()]
         label = self.data[key]["y"][()]
         return img, label
+        
 
     def __len__(self):
         if self.is_test:
