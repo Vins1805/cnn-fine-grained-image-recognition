@@ -3,6 +3,7 @@ import cv2
 import numpy as np
 from datasets.dataset import CUBDataset
 from torchvision import transforms
+from matplotlib import pyplot
 
 cub = CUBDataset()
 
@@ -26,8 +27,10 @@ img = torch.Tensor(img)
 mean, std = img.mean([1,2]), img.std([1,2])
 print("Mean:", mean, "\nStd:", std)
 print("image shape:", img.shape)
-img = transforms.Normalize(mean, std)(img)
-print(img)
+#img = transforms.Normalize(mean, std)(img)
+img = img/255
+#img = transforms.Normalize(mean=[0.485,0.456,0.406], std=[0.229,0.224,0.225])(img)
+print("Min; Max:",torch.min(img),torch.max(img))
 
 # show normalized image
 norm_img = np.array(img).transpose(1,2,0).astype(np.uint8)
@@ -35,8 +38,8 @@ print("norm image shape:", norm_img.shape)
 #cv2.imshow("norm", norm_img)
 
 # after normalization mean should be 0 and std be 1
-mean, std = img.mean([1,2]), img.std([1,2])
-print("Mean:", mean, "\nStd:", std)
+#mean, std = img.mean([1,2]), img.std([1,2])
+#print("Mean:", mean, "\nStd:", std)
 
 img = img.unsqueeze(0)
 
@@ -84,8 +87,8 @@ c_pattern = cv2.resize(c_pattern, [i*4 for i in c_pattern.shape])
 
 # mean of all patterns to get most interessting patter images
 p = patterns[0,:,:,:].detach().numpy().astype(np.uint8)
-bias = .5
-total_mean = np.mean(p) +  bias
+print(np.min(p),np.max(p))
+total_mean = np.mean(p)
 print("Total pattern mean:", total_mean)
 
 i = 0
@@ -113,4 +116,23 @@ for col in range(square):
 
 print(c_pattern.shape)
 c_pattern = cv2.resize(c_pattern, [i*7 for i in c_pattern.shape])
-cv2.imshow("pattern", c_pattern)
+#cv2.imshow("pattern", c_pattern)
+#cv2.waitKey(0)
+
+
+
+
+
+square = 22
+ix = 1
+for _ in range(square):
+    for _ in range(square):
+        # specify subplot and turn of axis
+        ax = pyplot.subplot(square, square, ix)
+        ax.set_xticks([])
+        ax.set_yticks([])
+        # plot filter channel in grayscale
+        pyplot.imshow(p[ix-1, :, :], cmap='gray')
+        ix += 1
+# show the figure
+pyplot.show()
