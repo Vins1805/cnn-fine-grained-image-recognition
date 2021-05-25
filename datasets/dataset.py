@@ -8,8 +8,7 @@ from sklearn.model_selection import train_test_split
 class CUBDataset(Dataset):
     def __init__(self, is_test: bool = False, test_size: int = 1/6, random_state: int = 0):
         """
-            Every instance of this class has the same train and test data due to fixed random state
-        
+            Every instance of this class has the same train and test data due to fixed random state.        
         """
         super(CUBDataset, self).__init__()
         self.is_test = is_test
