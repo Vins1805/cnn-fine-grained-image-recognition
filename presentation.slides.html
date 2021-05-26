@@ -13492,7 +13492,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$[t^1_x, t^1_y, t^2_x, t^2_y, ... t^Ω_x, t^Ω_y]$</p>
+<h3 id="Position-vector">Position vector<a class="anchor-link" href="#Position-vector">&#182;</a></h3><p>$[t^1_x, t^1_y, t^2_x, t^2_y, ... t^Ω_x, t^Ω_y]$</p>
 
 </div>
 </div>
@@ -13520,7 +13520,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$d_i(X) =f_i(W∗X)$</p>
+<h3 id="Weight-vector">Weight vector<a class="anchor-link" href="#Weight-vector">&#182;</a></h3><p>$d_i(X) =f_i(W∗X)$</p>
 
 </div>
 </div>
@@ -13559,7 +13559,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$M_i(X) = sigmoid(\sum_{i=1}^cd_{ji}[W∗X]_j)$</p>
+<h3 id="Attention-Maps">Attention Maps<a class="anchor-link" href="#Attention-Maps">&#182;</a></h3><p>$M_i(X) = sigmoid(\sum_{i=1}^cd_{ji}[W∗X]_j)$</p>
 
 </div>
 </div>
@@ -13592,7 +13592,11 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$L_{cng}(M_i) =Dis(M_i) +λDiv(M_i)$</p>
+<h3 id="Clustering-loss">Clustering loss<a class="anchor-link" href="#Clustering-loss">&#182;</a></h3><p>$L_{cng}(M_i) =Dis(M_i) +λDiv(M_i)$</p>
+<p>$Dis(M_i) =∑_{(x,y)∈M_i}m_i(x, y)[||x−t_x||^2+||y−t_y||^2]$</p>
+<p>$Div(M_i) =∑_{(x,y)∈M_i}m_i(x, y)[max_{k!=i}m_k(x, y)−mrg]$</p>
+<p>$weights = 2$</p>
+<p>$margin = 0.02$</p>
 
 </div>
 </div>
@@ -13754,7 +13758,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$P_i(X) =\sum_{j=1}^c([W∗X]_j·M_i)$</p>
+<h3 id="Spatial-Pooling">Spatial Pooling<a class="anchor-link" href="#Spatial-Pooling">&#182;</a></h3><p>$P_i(X) =\sum_{j=1}^c([W∗X]_j·M_i)$</p>
 
 </div>
 </div>
