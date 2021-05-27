@@ -13334,7 +13334,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">vgg19</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">hub</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;pytorch/vision:v0.9.0&#39;</span><span class="p">,</span> <span class="s1">&#39;vgg19&#39;</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -13354,7 +13354,7 @@ a.anchor-link {
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>Using cache found in C:\Users\Vincent/.cache\torch\hub\pytorch_vision_v0.9.0
+<pre>Using cache found in C:\Users\Valdone/.cache\torch\hub\pytorch_vision_v0.9.0
 </pre>
 </div>
 </div>
@@ -13485,7 +13485,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># coodinates == t</span>
@@ -13517,7 +13517,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Net</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
@@ -13555,7 +13555,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">attention_map</span><span class="p">(</span><span class="n">feature_channels</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
@@ -13590,7 +13590,7 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">loss_CNG</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
@@ -13807,7 +13807,7 @@ tensor([1436144.0000, 1474556.1250,  655453.8125, 1458574.0000,   10728.2344],
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">part_based_features</span><span class="p">(</span><span class="n">feature_channels</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
@@ -13826,20 +13826,27 @@ tensor([1436144.0000, 1474556.1250,  655453.8125, 1458574.0000,   10728.2344],
 </div>
 
 </div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Classifier-(VGG)">Classifier (VGG)<a class="anchor-link" href="#Classifier-(VGG)">&#182;</a></h3>
+</div>
+</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Classifier</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">Classifier</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">vgg19</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">hub</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;pytorch/vision:v0.9.0&#39;</span><span class="p">,</span> <span class="s1">&#39;vgg19&#39;</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">vgg19</span><span class="o">.</span><span class="n">classifier</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="mi">980</span><span class="p">,</span> <span class="n">out_features</span><span class="o">=</span><span class="mi">4096</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">vgg19</span><span class="o">.</span><span class="n">classifier</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="mi">4096</span><span class="p">,</span> <span class="n">out_features</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vgg19</span><span class="o">.</span><span class="n">classifier</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="mi">196</span><span class="p">,</span> <span class="n">out_features</span><span class="o">=</span><span class="mi">4096</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vgg19</span><span class="o">.</span><span class="n">classifier</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="mi">4096</span><span class="p">,</span> <span class="n">out_features</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">980</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pi</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">pi</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">196</span><span class="p">)</span>
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vgg19</span><span class="o">.</span><span class="n">classifier</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Softmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">x</span>
@@ -13849,18 +13856,18 @@ tensor([1436144.0000, 1474556.1250,  655453.8125, 1458574.0000,   10728.2344],
 </div>
 </div>
 
-</div></section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$L(X) =∑_{i=1}^N[L_{cls}(Y^{(i)},Y^∗)] +L_{cng}(M_1, ...,M_N)$</p>
+<h3 id="Total-Loss">Total Loss<a class="anchor-link" href="#Total-Loss">&#182;</a></h3><p>$L(X) =∑_{i=1}^N[L_{cls}(Y^{(i)},Y^∗)] +L_{cng}(M_1, ...,M_N)$</p>
 
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">loss_clf</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
@@ -13896,11 +13903,15 @@ tensor([1436144.0000, 1474556.1250,  655453.8125, 1458574.0000,   10728.2344],
 
             <span class="n">l_cng</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">loss_CNG</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">coordinates</span><span class="p">),</span> <span class="n">requires_grad</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
             <span class="n">P</span> <span class="o">=</span> <span class="n">part_based_features</span><span class="p">(</span><span class="n">channels</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">M</span><span class="p">)</span>
-    
-            <span class="n">output</span> <span class="o">=</span> <span class="n">classifier</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
-        
-         <span class="c1">#   prediction = torch.argmax(output)</span>
-            <span class="n">loss</span> <span class="o">=</span> <span class="n">l_cng</span> <span class="o">+</span> <span class="n">loss_clf</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">label</span><span class="o">.</span><span class="n">long</span><span class="p">())</span>
+            
+            <span class="n">l_clf</span> <span class="o">=</span> <span class="mi">0</span>
+            
+            <span class="k">for</span> <span class="n">pi</span> <span class="ow">in</span> <span class="n">P</span><span class="p">:</span>
+                
+                <span class="n">output</span> <span class="o">=</span> <span class="n">classifier</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+                <span class="n">l_clf</span> <span class="o">+=</span> <span class="n">loss_clf</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">label</span><span class="o">.</span><span class="n">long</span><span class="p">())</span>
+            
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">l_cng</span> <span class="o">+</span> <span class="n">l_clf</span>
             
             <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">l_cng</span><span class="p">):</span>
                 <span class="n">l</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">retain_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -13918,7 +13929,7 @@ tensor([1436144.0000, 1474556.1250,  655453.8125, 1458574.0000,   10728.2344],
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">...</span>
@@ -13938,34 +13949,34 @@ tensor([1436144.0000, 1474556.1250,  655453.8125, 1458574.0000,   10728.2344],
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>tensor([1.4315e+06, 1.5416e+06, 1.2038e+06, 1.1940e+06, 3.9389e+01],
+<pre>tensor([1.5482e+06, 1.0676e+06, 9.6649e+05, 1.5095e+06, 6.9435e+00],
        grad_fn=&lt;AddBackward0&gt;) 
 
-tensor([1129401.6250, 1358732.1250,  562324.0000, 1433836.2500,    4553.6133],
+tensor([6.9026e+05, 1.5968e+06, 1.0569e+05, 1.5470e+06, 8.0038e+00],
        grad_fn=&lt;AddBackward0&gt;) 
 
-tensor([1401125.7500, 1608028.8750,  193507.8750, 1513797.1250,   16222.1836],
+tensor([1.5695e+06, 1.4822e+06, 5.2768e+05, 1.5857e+06, 2.9069e+01],
        grad_fn=&lt;AddBackward0&gt;) 
 
-tensor([1469466.3750, 1469076.3750,  768586.5000, 1447808.5000,    8764.1367],
+tensor([1.4598e+06, 1.5724e+06, 4.2791e+05, 1.5911e+06, 1.0111e+01],
        grad_fn=&lt;AddBackward0&gt;) 
 
-tensor([ 614536.2500, 1450106.0000, 1093808.0000, 1505579.6250,    4586.9614],
+tensor([1.0148e+06, 1.5061e+06, 7.1975e+05, 1.4948e+06, 3.2307e+01],
        grad_fn=&lt;AddBackward0&gt;) 
 
-tensor([ 960825.1875,  917320.7500,  761418.9375, 1468526.3750,   27352.0098],
+tensor([ 806553.9375, 1331386.1250, 1362458.2500, 1514333.5000,   11152.9297],
        grad_fn=&lt;AddBackward0&gt;) 
 
-tensor([1206563.5000,  657936.1250,  624993.1875, 1539441.7500,   19152.2754],
+tensor([1483265.5000, 1579672.1250,  758517.2500, 1385830.6250,    2455.0676],
        grad_fn=&lt;AddBackward0&gt;) 
 
-tensor([ 731994.6250, 1084920.1250,  943637.0000, 1494893.3750,   46484.4297],
+tensor([1.2451e+06, 1.5255e+06, 3.1371e+05, 1.6197e+06, 4.0928e+02],
        grad_fn=&lt;AddBackward0&gt;) 
 
-tensor([1245384.7500, 1607173.8750,  607827.3125, 1313282.8750,   18650.5645],
+tensor([1.5695e+06, 1.4822e+06, 5.2768e+05, 1.5857e+06, 2.9069e+01],
        grad_fn=&lt;AddBackward0&gt;) 
 
-tensor([1.4446e+06, 1.6159e+06, 6.4814e+05, 1.5116e+06, 1.3988e+03],
+tensor([1136270.3750, 1334055.7500, 1345352.3750, 1462921.1250,   12351.7422],
        grad_fn=&lt;AddBackward0&gt;) 
 
 </pre>
@@ -13994,37 +14005,25 @@ tensor([1.4446e+06, 1.6159e+06, 6.4814e+05, 1.5116e+06, 1.3988e+03],
         <span class="n">img</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="p">[</span><span class="mf">0.485</span><span class="p">,</span><span class="mf">0.456</span><span class="p">,</span><span class="mf">0.406</span><span class="p">],</span> <span class="n">std</span><span class="o">=</span><span class="p">[</span><span class="mf">0.229</span><span class="p">,</span><span class="mf">0.224</span><span class="p">,</span><span class="mf">0.225</span><span class="p">])(</span><span class="n">img</span><span class="o">/</span><span class="mi">255</span><span class="p">)</span> 
         <span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
         <span class="n">channels</span> <span class="o">=</span> <span class="n">vgg19</span><span class="o">.</span><span class="n">features</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-        <span class="n">coordinates</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">channel</span> <span class="ow">in</span> <span class="n">channels</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()[</span><span class="mi">0</span><span class="p">]:</span>
-            <span class="n">coordinates</span> <span class="o">=</span> <span class="n">coordinates</span> <span class="o">+</span> <span class="p">[</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">channel</span><span class="o">.</span><span class="n">argmax</span><span class="p">(),</span> <span class="n">channel</span><span class="o">.</span><span class="n">shape</span><span class="p">)]</span>
-        <span class="n">t_flat</span> <span class="o">=</span> <span class="p">[</span><span class="n">point</span> <span class="k">for</span> <span class="n">coordinate</span> <span class="ow">in</span> <span class="n">coordinates</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">coordinate</span><span class="p">]</span>
-        <span class="n">t_flat</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">t_flat</span><span class="p">)</span>
         <span class="n">M</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">N</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_parts</span><span class="p">):</span>      
             <span class="c1"># Calculate weight vector &quot;d&quot;</span>
             <span class="n">part</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;models/part</span><span class="si">{N}</span><span class="s1">.pth&#39;</span><span class="p">)</span>
-            <span class="n">d</span> <span class="o">=</span> <span class="n">part</span><span class="p">(</span><span class="n">t_flat</span><span class="p">)</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="n">part</span><span class="p">(</span><span class="n">channels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
             <span class="c1"># Calculate attention map &quot;M&quot;</span>
             <span class="n">mi</span> <span class="o">=</span> <span class="n">attention_map</span><span class="p">(</span><span class="n">channels</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">d</span><span class="p">)</span>
             <span class="n">M</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mi</span><span class="p">)</span>
 
-        <span class="n">l_cng</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">loss_CNG</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">coordinates</span><span class="p">),</span> <span class="n">requires_grad</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
         <span class="n">P</span> <span class="o">=</span> <span class="n">part_based_features</span><span class="p">(</span><span class="n">channels</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">M</span><span class="p">)</span>
 
-        <span class="n">output</span> <span class="o">=</span> <span class="n">cnn</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+        <span class="n">prediction</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">pi</span> <span class="ow">in</span> <span class="n">P</span><span class="p">:</span>
 
-        <span class="n">loss</span> <span class="o">=</span> <span class="n">l_cng</span> <span class="o">+</span> <span class="n">loss_clf</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">label</span><span class="o">.</span><span class="n">long</span><span class="p">())</span>
-
-        <span class="n">prediction</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">o</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
-            <span class="k">if</span> <span class="n">o</span> <span class="o">&gt;</span> <span class="n">prediction</span><span class="p">:</span>
-                <span class="n">prediction</span> <span class="o">=</span> <span class="n">o</span>
-                <span class="n">index</span> <span class="o">=</span> <span class="n">i</span>
-
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Prediction:&quot;</span><span class="p">,</span><span class="n">index</span><span class="p">,</span><span class="s2">&quot;Ground truth:&quot;</span><span class="p">,</span> <span class="n">label</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">cnn</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+            <span class="n">prediction</span> <span class="o">=</span> <span class="n">prediction</span> <span class="o">+</span> <span class="p">[</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">argmax</span><span class="p">(),</span> <span class="n">output</span><span class="o">.</span><span class="n">shape</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+            
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Prediction:&quot;</span><span class="p">,</span><span class="n">prediction</span><span class="p">,</span><span class="s2">&quot;Ground truth:&quot;</span><span class="p">,</span> <span class="n">label</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
 </pre></div>
 
     </div>
@@ -14034,7 +14033,7 @@ tensor([1.4446e+06, 1.6159e+06, 6.4814e+05, 1.5116e+06, 1.3988e+03],
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">...</span>
@@ -14054,49 +14053,46 @@ tensor([1.4446e+06, 1.6159e+06, 6.4814e+05, 1.5116e+06, 1.3988e+03],
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Prediction: 0 Ground truth: 3
-Prediction: 0 Ground truth: 3
-Prediction: 0 Ground truth: 3
-Prediction: 0 Ground truth: 0
-Prediction: 0 Ground truth: 3
-Prediction: 0 Ground truth: 3
-Prediction: 0 Ground truth: 1
-Prediction: 0 Ground truth: 0
-Prediction: 0 Ground truth: 0
-Prediction: 0 Ground truth: 1
-Prediction: 0 Ground truth: 0
-Prediction: 0 Ground truth: 1
-Prediction: 0 Ground truth: 3
-Prediction: 0 Ground truth: 1
-Prediction: 0 Ground truth: 3
-Prediction: 0 Ground truth: 2
-Prediction: 0 Ground truth: 3
-Prediction: 0 Ground truth: 3
-Prediction: 0 Ground truth: 1
-Prediction: 0 Ground truth: 1
-Prediction: 0 Ground truth: 2
-Prediction: 0 Ground truth: 3
-Prediction: 0 Ground truth: 2
-Prediction: 0 Ground truth: 0
-Prediction: 0 Ground truth: 0
-Prediction: 0 Ground truth: 3
-Prediction: 0 Ground truth: 2
-Prediction: 0 Ground truth: 0
-Prediction: 0 Ground truth: 0
-Prediction: 0 Ground truth: 0
-Prediction: 0 Ground truth: 1
-Prediction: 0 Ground truth: 0
-Prediction: 0 Ground truth: 1
-Prediction: 0 Ground truth: 1
-Prediction: 0 Ground truth: 0
-Prediction: 0 Ground truth: 1
-Prediction: 0 Ground truth: 3
-Prediction: 0 Ground truth: 2
-Prediction: 0 Ground truth: 0
-Prediction: 0 Ground truth: 0
-tensor([1596145.2500, 1289957.2500, 1636861.0000, 1415552.7500, 1644311.0000],
-       grad_fn=&lt;AddBackward0&gt;) 
-
+<pre>Prediction: [0, 0, 0, 0, 0] Ground truth: 1
+Prediction: [0, 0, 0, 0, 0] Ground truth: 1
+Prediction: [0, 0, 0, 0, 0] Ground truth: 1
+Prediction: [0, 0, 0, 0, 0] Ground truth: 0
+Prediction: [0, 0, 0, 0, 0] Ground truth: 0
+Prediction: [0, 0, 0, 0, 0] Ground truth: 0
+Prediction: [0, 0, 0, 0, 0] Ground truth: 2
+Prediction: [0, 0, 0, 0, 0] Ground truth: 0
+Prediction: [0, 0, 0, 0, 0] Ground truth: 3
+Prediction: [0, 0, 0, 0, 0] Ground truth: 3
+Prediction: [0, 0, 0, 0, 0] Ground truth: 1
+Prediction: [0, 0, 0, 0, 0] Ground truth: 0
+Prediction: [0, 0, 0, 0, 0] Ground truth: 2
+Prediction: [0, 0, 0, 0, 0] Ground truth: 0
+Prediction: [0, 0, 0, 0, 0] Ground truth: 3
+Prediction: [0, 0, 0, 0, 0] Ground truth: 2
+Prediction: [0, 0, 0, 0, 0] Ground truth: 1
+Prediction: [0, 0, 0, 0, 0] Ground truth: 3
+Prediction: [0, 0, 0, 0, 0] Ground truth: 0
+Prediction: [0, 0, 0, 0, 0] Ground truth: 1
+Prediction: [0, 0, 0, 0, 0] Ground truth: 3
+Prediction: [0, 0, 0, 0, 0] Ground truth: 0
+Prediction: [0, 0, 0, 0, 0] Ground truth: 2
+Prediction: [0, 0, 0, 0, 0] Ground truth: 0
+Prediction: [0, 0, 0, 0, 0] Ground truth: 3
+Prediction: [0, 0, 0, 0, 0] Ground truth: 1
+Prediction: [0, 0, 0, 0, 0] Ground truth: 3
+Prediction: [0, 0, 0, 0, 0] Ground truth: 1
+Prediction: [0, 0, 0, 0, 0] Ground truth: 1
+Prediction: [0, 0, 0, 0, 0] Ground truth: 3
+Prediction: [0, 0, 0, 0, 0] Ground truth: 0
+Prediction: [0, 0, 0, 0, 0] Ground truth: 3
+Prediction: [0, 0, 0, 0, 0] Ground truth: 0
+Prediction: [0, 0, 0, 0, 0] Ground truth: 0
+Prediction: [0, 0, 0, 0, 0] Ground truth: 2
+Prediction: [0, 0, 0, 0, 0] Ground truth: 1
+Prediction: [0, 0, 0, 0, 0] Ground truth: 3
+Prediction: [0, 0, 0, 0, 0] Ground truth: 3
+Prediction: [0, 0, 0, 0, 0] Ground truth: 0
+Prediction: [0, 0, 0, 0, 0] Ground truth: 3
 </pre>
 </div>
 </div>
