@@ -5,6 +5,7 @@ Learning Multi-Attention Convolutional Neural Network for Fine-GrainedImage Reco
 
 * models are not added -> you have to train our models by yourself to test them
 * we added the 4 image folders of our data
+* first start script 0 to generate samples
 
 ## Dataset
 
