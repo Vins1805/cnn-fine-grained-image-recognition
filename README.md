@@ -3,6 +3,9 @@ Learning Multi-Attention Convolutional Neural Network for Fine-GrainedImage Reco
 
 [PAPER](https://openaccess.thecvf.com/content_ICCV_2017/papers/Zheng_Learning_Multi-Attention_Convolutional_ICCV_2017_paper.pdf)
 
+* models are not added -> you have to train our models by yourself to test them
+* we added the 4 image folders of our data
+
 ## Dataset
 
 [Stanford Cars](https://ai.stanford.edu/~jkrause/cars/car_dataset.html)
